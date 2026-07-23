@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.8",
-    "next": "16.2.11",
+    "next": "^15.5.7",
     "openai": "^6.48.0",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -21,7 +21,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.11",
+    "eslint-config-next": "^15.5.7",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

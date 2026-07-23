@@ -1,26 +1,22 @@
 # AI Agent — Real Estate MVP (Demo)
 
-وكيل عقارات تجريبي (Next.js). محلي: `npm install && npm run dev`.
+```bash
+npm install && npm run dev
+```
 
-## Vercel — Build ناجح لكن `404 NOT_FOUND`
+## Vercel: Build OK لكن 404 على `/`
 
-الـ log بتاعك سليم؛ المشكلة غالبًا **إعدادات المشروع** مش الكود.
+**اختبار:** افتحي `/next.svg` — لو شغال و `/` لا → المشروع متعامل كـ **Static** و Output غالبًا **`public`**.
 
-في **Settings → General → Build & Development Settings**:
+### الحل (بالترتيب)
 
-| الإعداد | المطلوب |
-|---------|---------|
-| **Framework Preset** | **Next.js** |
-| **Root Directory** | فاضي |
-| **Output Directory** | **فاضي تمامًا** — لو فيه `.next` أو `out` **امسحيه** (ده سبب شائع جدًا) |
-| **Build Command** | فاضي أو `npm run build` |
+1. **Settings → General → Framework Preset** → اختاري **Next.js** (مش Other).
+   - لما Preset = Next.js، حقل Output Directory **بيختفي** — ده المطلوب.
+2. لو لسه ظاهر **Output Directory**، امسحي أي قيمة (خصوصًا `public`).
+3. **Override** جنب Build Settings: اقفلي أي override غريب.
+4. **Redeploy** (Clear cache).
 
-بعد آخر push: من **Deployments** اضغطي **Visit** على **نفس الـ deployment** (مش domain قديم).
+لو `/` لسه بتعرض `index.html` التشخيصي → Preset لسه مش Next.js.  
+لو `/` بقت «نخيل Demo» → شغّال.
 
 Environment (اختياري): `OPENAI_API_KEY`
-
-## مسارات
-
-- `/` — landing + شات
-- `/chat` — محادثة
-- `/admin` — leads (Demo)

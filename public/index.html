@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <title>إعداد Vercel غلط</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 36rem;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        line-height: 1.6;
+      }
+      code {
+        background: #eee;
+        padding: 0.1rem 0.35rem;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>الملفات الثابتة شغالة — Next.js لا</h1>
+    <p>
+      لو شفتِ الصفحة دي على <code>/</code> مع إن <code>/next.svg</code> بيفتح،
+      Vercel بينشر <strong>public/</strong> بس مش تطبيق Next.
+    </p>
+    <ol>
+      <li>
+        <strong>Settings → General → Framework Preset</strong> = <strong>Next.js</strong>
+        (مش Other)
+      </li>
+      <li>
+        <strong>Output Directory</strong> = فاضي — مش <code>public</code> ولا
+        <code>.next</code>
+      </li>
+      <li>Redeploy</li>
+    </ol>
+    <p>بعد التصليح، الصفحة الرئيسية هتبقى واجهة «نخيل Demo» من <code>app/page.tsx</code>.</p>
+  </body>
+</html>
